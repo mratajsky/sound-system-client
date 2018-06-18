@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+#
+# Name of the module to load
+#
+MODNAME=sound_system_station
+#
+# When running inside the source package, use the module contained there,
+# otherwise use the installed one
+#
+BINDIR=`dirname $0`
+[ -d "$BINDIR/../$MODNAME" ] && cd "$BINDIR/.."
+
+/usr/bin/env python3 -m $MODNAME.main
+
